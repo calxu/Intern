@@ -2,15 +2,12 @@
 
 HADOOP_BIN="/home/`whoami`/hadoop_client_wutai/hadoop/bin/hadoop"
 
-# INPUT1="/app/fbu/dc/data/blacklist/idmapping_result/passid.20160629.all20160629230959_*/*-A"
-# INPUT1="/app/fbu/dc/data/blacklist/idmapping_result/output_devices_from_idm_x.20161016/*/*-X"
-# INPUT1="/app/fbu/dc/data/blacklist/idmapping_result/output_devices_from_idm_x.20170426/*/*-X"
-INPUT1="/app/fbu/dc/data/blacklist/idmapping_result/output_devices_from_idm_x.20170524/*/*-X"
+INPUT1="table2"
 
-INPUT2="/app/fbu/dc/data/blacklist/idmapping_result/temp_result/table1"
+INPUT2="table1"
 
 #输出目录，path必须不存在
-HADOOP_OUTPUT="/app/fbu/dc/data/blacklist/idmapping_result/temp_result/result_20170524_task5_imei"
+HADOOP_OUTPUT="temporary_result"
 
 TASK_NAME="COUNT IDM"
 ${HADOOP_BIN} fs -test -e ${HADOOP_OUTPUT}
@@ -50,5 +47,5 @@ else
 fi
 
 
-OUTPUT="/app/fbu/dc/data/blacklist/idmapping_result/temp_result/result_20170524_task5_imei/*"
+OUTPUT="temporary_result"
 $HADOOP_BIN fs -cat ${OUTPUT} | awk '{sum1+=$2}END{print sum1}'
