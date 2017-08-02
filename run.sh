@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HADOOP_BIN="/home/`whoami`/hadoop_client_wutai/hadoop/bin/hadoop"
+HADOOP_BIN="/home/hadoop/bin/hadoop"
 
 INPUT1="table2"
 
