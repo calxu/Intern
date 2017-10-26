@@ -12,6 +12,7 @@ def read_data(file):
 
 def main():
     """ count the number """
+    data = read_data(sys.stdin)
     for key, it in groupby(data, itemgetter(0)):
         print key
 
